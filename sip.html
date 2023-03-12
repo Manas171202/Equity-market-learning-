@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="script.css">
+        <script type="text/javascript" src="script.js"></script>
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Welcome to iCoder. A blog for coding enthusiasts">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>EQUITY MARKET LEARNING </title>
+    </head>
+    <body class="body-background">
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">EQUITY MARKET LEARNING</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/data.html">Chapters</a>
+                    </li>
+      
+                    <li class="nav-item">
+                      <a class="nav-link" href="/cources.html">Tutorials</a>
+                  </li>
+      
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/sip.html">SIP Calculator</a>
+                </li>
+      
+                      <li class="nav-item">
+                        <a class="nav-link" href="/basic.html">Detail on broker</a>
+                    </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/about.html">About</a>
+                      </li>
+      
+    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Books
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="/books.html">Technical Analysis</a>
+                          <a class="dropdown-item" href="/books2.html">Fundamental Analysis</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="/books3.html">NISM Xa </a>
+                          <a class="dropdown-item" href="/books4.html">NISM Xb</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </li>
+                </ul>
+    
+                <li class="nav-item dropdown">
+                  <a class="btn btn-danger dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Udemy
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://www.udemy.com/course/the-beginners-guide-to-the-stock-market/">Cource 1 </a>
+                    <a class="dropdown-item" href="https://www.udemy.com/course/international-stock-market-investing-trading-course/">Cource 2</a>
+                    <a class="dropdown-item" href="https://www.udemy.com/course/how-to-become-a-stock-trader-market-analysis-trading-options-stocks/">Cource 3</a>
+                  </div>
+              </li>
+             
+            </div>
+          </nav>
+
+
+
+        <div class="header">Mutual Fund Investment Calculator</div>
+        <div class="page-container">
+            <div class="switch-container">
+                <div class="radio-button">
+                    <label for="sip">SIP</label>
+                    <input type="radio" checked name="checked" value="SIP">
+                    <label for="lumpsum">LumpSum</label>
+                    <input type="radio" name="checked" value="LumpSum">
+                </div>
+                <div class="dropdown">
+                    Currency
+                    <select onchange="currencyChange(this)" id="currency" class="currency">
+                        <!-- &#8377; -->
+                        <option value="Rs">&#8377; &nbsp;INR</option>
+                        <option value="$">&#128176;USD</option>
+                        <!-- &#x24; -->
+                    </select>
+            </div>
+        </div>
+            <div class="input-container">
+                <div>
+                    <div>Monthly Investment &#10067 </div>
+                    <br/>
+                    <div><input id="investment" type="text" onchange="commas(this)"/></div>
+                    <br/>
+                    <div>Number of Years &#10067</div>
+                    <br/>
+                    <div><input id="years" type="number"></div> 
+                    <br/>
+                    <div>Expected Rate of Return &#10067</div>
+                    <br/>
+                    <div><input id="return-rate"  type="text" onchange="percentage(this)")/></div> 
+                </div>
+            </div>
+            </br/>
+            <div class="btn-calculate">
+                <button type="button" onclick="calculateResult()">
+                    Calculate
+                </button>
+            </div>
+            </br/>
+            <div style="display: flex;">
+                <div class="result">Result :</div>
+              <div class="result-container">
+                    <div>Monthly Investment for <span id="mode-1">SIP</span></div>
+                    <br/>
+                    <div><span>Rs.</span>&nbsp;<span id="input-1"></span></div>
+                    <br/>
+                    <div>Number of Years <span id="mode-2">SIP</span></div>
+                    <br/>
+                    <div><span>Years:</span>&nbsp;<span id="input-2"></span></div> 
+                    <br/>
+                    <div>Expected Rate of Return <span id="mode-3">SIP</span></div>
+                    <br/>
+                    <div><span>%:</span>&nbsp;<span id="input-3"></span></div> 
+            </div>
+            <div class="result-container">
+                <div> Investment Value 💸</div>
+                <br/>
+                <div><span id="currency-change-1">Rs.</span>&nbsp;<span id="total"></span></div>
+                <br/>
+                <div>Total Value 💸</div>
+                <br/>
+                <div><span id="currency-change-2">Rs.</span>&nbsp;<span id="wealth-gained"></span></div> 
+                <br/>
+                <div>Estimated returns 💸</div>
+                <br/>
+                <div><span id="currency-change-3">Rs.</span>&nbsp;<span id="maturity-value"></span></div> 
+        </div>
+    </div>
+            <br/>
+            
+        </div>
+    </div>
+    </body>
+</html>
